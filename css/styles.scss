@@ -10,4 +10,21 @@
 
 @import 'bulma/sass/utilities/_all.sass';
 @import 'bulma/sass/base/_all.sass';
+@import 'bulma/sass/elements/_all.sass';
 @import 'bulma/sass/components/navbar.sass';
+
+.container {
+  padding: $small-padding;
+}
+
+.navbar-item {
+  display: inline-block;
+}
+
+.navbar-menu {
+  box-shadow: none;
+}
+
+.navbar {
+  text-align: center;
+}
