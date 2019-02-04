@@ -1,71 +1,22 @@
 <!-- START NAV -->
-<nav
-  class='navbar'
-  >
-  <div
-    class='container'
-    >
-    <div
-      class='navbar-brand'
-      >
-      <a
-        class='navbar-item'
-        href='/'
-        >
+<div class='container'>
+  <nav class='navbar is-transparent'>
+    <div class='navbar-start'>
+      <a href='/' class='navbar-item'>
         pikesley.org
       </a>
-      <span
-        class='navbar-burger burger'
-        id='navbar-burger-id'
-        >
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
     </div>
-    <div
-      id='navbar-menu-id'
-      class='navbar-menu'
-      >
-      <div
-        class='navbar-end'
-        >
+    <div id='navbar-menu-id' class='navbar-menu is-active'>
+      <div class='navbar-end'>
         {% for item in site.data.nav %}
-          <a
-            href='{{ item.path }}'
-             title='{{ item.title }}'
-             class='navbar-item
+          <a href='{{ item.path }}' title='{{ item.title }}' class='navbar-item
              {% if item.path == page.url %} is-active{% endif %}
-             {% if item.path contains page.parent %} is-active{% endif %}'
-             >
+             '>
             {{ item.title }}
           </a>
         {% endfor %}
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
 <!-- END NAV -->
-
-<script>
-    // Close mobile & tablet menu on item click
-  $('.navbar-item').each(function(e) {
-    $(this).click(function(){
-      if($('#navbar-burger-id').hasClass('is-active')){
-        $('#navbar-burger-id').removeClass('is-active');
-        $('#navbar-menu-id').removeClass('is-active');
-      }
-    });
-  });
-
-  // Open or Close mobile & tablet menu
-  $('#navbar-burger-id').click(function () {
-    if($('#navbar-burger-id').hasClass('is-active')){
-      $('#navbar-burger-id').removeClass('is-active');
-      $('#navbar-menu-id').removeClass('is-active');
-    }else {
-      $('#navbar-burger-id').addClass('is-active');
-      $('#navbar-menu-id').addClass('is-active');
-    }
-  });
-</script>
