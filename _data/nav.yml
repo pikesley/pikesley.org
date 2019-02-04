@@ -1,14 +1,11 @@
-- title: Home
-  path:  /
+- title: Projects
+  path:  /projects/
 
-# - title: Projects
-#   path:  /projects/
-#
-# - title: Talks
-#   path:  /talks/
-#
-# - title: Blog
-#   path:  /blog/
-#
-# - title: CV
-#   path:  /cv/
+- title: Talks
+  path:  /talks/
+
+- title: Blog
+  path:  /blog/
+
+- title: CV
+  path:  /cv/
