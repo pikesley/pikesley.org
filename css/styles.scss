@@ -2,75 +2,104 @@
 ---
 
 @charset 'utf-8';
-
+@import 'variables';
 @import 'fonts';
 @import 'colours';
-@import 'variables/global';
-@import 'variables/component';
-
-@import 'bulma/sass/utilities/_all.sass';
-@import 'bulma/sass/base/_all.sass';
-@import 'bulma/sass/elements/_all.sass';
-@import 'bulma/sass/components/navbar.sass';
-@import 'bulma/sass/layout/footer.sass';
 
 html {
-  background: $background;
   color: $primary;
+  background: $background;
+  text-align: justify;
+  min-height: 100%;
+  position: relative;
+  font-family: $font-primary;
 }
 
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background: $primary;
-  padding: $small-padding $small-padding;
-  color: $background;
+body {
+  margin-bottom: $footer-height;
+}
+
+a {
+  text-decoration: none;
+
+  color: $link;
+  &:hover {
+    color: $link-alt;
+  }
+}
+
+nav, footer {
+  text-transform: lowercase;
+  // align-items: center;
+
   a {
-    color: $background;
+  	text-shadow:
+  		-1px -1px 0 $black,
+  		1px  -1px 0 $black,
+  		-1px  1px 0 $black,
+  		1px   1px 0 $black;
+      font-size: 2em;
+  }
+
+  font-family: $font-header;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:after {
+    content: '';
+  }
+
+  li:last-child:after {
+    content: none;
+  }
+
+  #brand {
+    font-size: 1.2em;
+  }
+
+  #brand, #nav-menu {
+    text-align: center;
+  }
+
+  @media (min-width: 550px) {
+    #nav-menu {
+      text-align: right;
+    }
+
+    #brand {
+      text-align: left
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.5em;
+  font-family: $font-primary;
+
+  a {
+    text-shadow: none;
+    color: $link-alt;
 
     &:hover {
-      color: darken($background, 10%);
+      color: $link;
     }
   }
 
-  .footer-item:after {
-    content: '::';
-  }
-
-  .footer-item:last-child:after {
-    content: none;
-  }
-}
-
-.container {
-  align-items: top;
-  padding: $small-padding;
-}
-
-.navbar-item {
-  display: inline-block;
-  color: $primary;
-}
-
-.navbar-menu {
-  box-shadow: none;
-  background: inherit;
-}
-
-.navbar {
-  align-items: center;
-  text-align: center;
-  background: inherit;
-  text-transform: lowercase;
-
-  a:hover {
-    color: darken($primary, 10%);
-    background: inherit;
-  }
-}
-
-.navbar-start {
-  font-weight: bold;
-  font-size: 2em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $footer-height;
+  margin: 0;
+  padding: 0.5rem;
+  background: $highlight;
 }
