@@ -1,3 +1,5 @@
-$orange: rgb(241,138,0);
+@import 'palettes/default.scss';
 
-$primary: $orange;
+$background: $rgba-primary-0;
+
+$primary: $rgba-complement-4;

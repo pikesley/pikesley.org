@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="has-text-centered">
+    {% for item in site.data.footer %}
+      <a href='{{ item.url }}' class='footer-item'>
+        <span class="fab fa-{{ item.fontawesome }}"></span>
+        {{ item.title }}
+      </a>
+    {% endfor %}
+  </div>
+</footer>
