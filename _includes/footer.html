@@ -1,0 +1,12 @@
+<footer>
+  <ul>
+    {% for item in site.data.footer %}
+      <li>
+        <a href='{{ item.url }}'>
+          <span class="fab fa-{{ item.fontawesome }}"></span>
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</footer>
